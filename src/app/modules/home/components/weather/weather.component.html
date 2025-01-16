@@ -1,21 +1,20 @@
-<div *ngIf="errorMessage" class="error-message">
-  {{ errorMessage }}
-</div>
+<!-- Sunset and sunrise container -->
 <div class="sunrise-sunset" *ngIf="sunrise && sunset && !cityNotFound">
   <div class="sunrise">
     <div class="weather-icon-container">
       <img src="../../../../assets/icons/sunrise.svg" alt="sunrise-icon"/>
-      <span>{{ sunrise }} AM</span>
+      <span class="hour-sunrise">{{ sunrise }} AM</span>
     </div>
   </div>
   <div class="line"></div>
   <div class="sunset">
     <div class="weather-icon-container">
-      <span>{{ sunset }} PM</span>
+      <span class="hour-sunset">{{ sunset }} PM</span>
       <img src="../../../../assets/icons/sunset.svg" alt="sunset-icon"/>
     </div>
   </div>
 </div>
+<!-- Weather cards-->
 <div class="days" *ngIf="!cityNotFound">
   <div class="forecast-cards">
     <mat-card *ngFor="let day of forecast; let i = index" class="forecast-card">
@@ -46,4 +45,7 @@
     </mat-card>
   </div>
 </div>
-
+<!-- Error message -->
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>

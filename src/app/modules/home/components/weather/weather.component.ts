@@ -13,7 +13,7 @@ export class WeatherComponent implements OnChanges {
   @Input() city: string = '';
   @Input() errorMessage: string = '';
   weatherData: any;
-  forecast: any[] = [];  // Aquí almacenamos el pronóstico filtrado
+  forecast: any[] = [];
   sunrise: string = '';
   sunset: string = '';
   cityNotFound: boolean = false;
@@ -30,17 +30,15 @@ export class WeatherComponent implements OnChanges {
     if (this.city) {
       firstValueFrom(this.weatherService.getWeather(this.city))
         .then((data: any) => {
-          console.log(data);  // Agregar este log para revisar la estructura de los datos
           this.sunrise = this.formatTime(data.city.sunrise);
           this.sunset = this.formatTime(data.city.sunset);
-          // Filtrar el pronóstico
           this.forecast = this.filterForecast(data);
           this.errorMessage = '';
           this.cityNotFound = false;
         })
         .catch((error: any) => {
           this.cityNotFound = true;
-          this.errorMessage = 'No se encuentra la ciudad';
+          this.errorMessage = error.message;
           console.error('Error fetching weather data', error);
         });
     }

@@ -10,6 +10,5 @@ export class HomeComponent {
 
   onSearch(query: string) {
     this.searchQuery = query;
-    console.log('Buscando:', this.searchQuery);
   }
 }

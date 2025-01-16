@@ -1,4 +1,5 @@
 <form class="search-container" (ngSubmit)="onSearch()">
+  <!-- Search input -->
   <mat-form-field class="search-field">
     <mat-label>Busca tu ciudad</mat-label>
     <input
@@ -10,4 +11,15 @@
       name="search"
     />
   </mat-form-field>
+  <!-- Search button -->
+   <div class="button-container">
+     <button
+       mat-raised-button
+       class="button-search"
+       type="button"
+       (click)="onSearch()"
+     >
+       Buscar
+     </button>
+   </div>
 </form>

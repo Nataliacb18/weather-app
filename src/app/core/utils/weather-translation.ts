@@ -1,6 +1,5 @@
 import moment from 'moment-timezone';
 
-// Traducción de descripción del clima
 export const translate = (description: string): string => {
   switch (description) {
     case 'moderate rain':
@@ -14,11 +13,10 @@ export const translate = (description: string): string => {
     case 'overcast clouds':
       return 'Nublado';
     default:
-      return description; // Devuelve la descripción tal cual si no hay traducción
+      return description;
   }
 };
 
-// Traducción del mes
 export const translateMes = (month: number): string => {
   const fechaMoment = moment(month * 1000).tz("Europe/Madrid").format("MMMM");
   const mesTraducido: { [key: string]: string } = {
@@ -40,7 +38,6 @@ export const translateMes = (month: number): string => {
 };
 
 export const translateDias = (day: string): string => {
-  // Extrae solo la parte de la fecha (asumiendo que el formato es 'YYYY-MM-DD HH:mm:ss')
   const fechaMoment = moment(day.split(' ')[0], 'YYYY-MM-DD').tz("Europe/Madrid").format("dddd");
 
   const diaTraducido: { [key: string]: string } = {

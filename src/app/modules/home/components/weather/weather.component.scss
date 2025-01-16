@@ -12,17 +12,24 @@
     }
 
     img {
-      width: 20%;
+      width: 5vw;
     }
 
-    span {
-      font-size: 24px;
+    .hour-sunrise{
+      font-size: 1rem;
+      margin-left: .5rem;
+    }
+
+    .hour-sunset{
+      font-size: 1rem;
+      margin-right: .5rem;
     }
   }
   .line{
     border: 1px solid rgba(255, 255, 255, 0.199);
-    box-shadow: 1px 1px 17px 0px;
+    box-shadow: .05rem .05rem .85rem 0rem;
     height: 20vh;
+    margin-top: .5rem;
   }
 }
 
@@ -40,7 +47,7 @@
     padding: 1rem;
 
     .card-header {
-      padding: 10px;
+      padding: .5rem;
       .card-title {
         display: flex;
         justify-content: center;
@@ -49,8 +56,8 @@
 
     .forecast-card {
       flex: 0 0 auto;
-      min-width: 200px;
-      max-width: 250px;
+      min-width: 10rem;
+      max-width: 12.5rem;
       transition: transform 0.2s ease;
       display: flex;
       flex-direction: column;
@@ -74,8 +81,8 @@
       }
 
       .weather-icon {
-        width: 50px;
-        height: 50px;
+        width: 2.5rem;
+        height: 2.5rem;
       }
 
       .extra-info {
@@ -83,8 +90,8 @@
         flex-direction: column;
 
         img {
-          width: 20px;
-          height: 20px;
+          width: 1rem;
+          height: 1rem;
           margin-right: 0.5rem;
         }
       }
@@ -93,7 +100,24 @@
 }
 
 .error-message {
-  color: red;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
+@media (max-width: 1024px) {
+  .sunrise-sunset {
+    justify-content: center;
+
+    .hour-sunrise {
+      margin-right: .5rem;
+    }
+
+    .hour-sunset {
+      margin-left: .5rem;
+    }
+  }
+
+  .error-message {
+    display: flex;
+    justify-content: center;
+  }
+}
