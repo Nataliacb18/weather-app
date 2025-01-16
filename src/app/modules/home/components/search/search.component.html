@@ -1,0 +1,13 @@
+<form class="search-container" (ngSubmit)="onSearch()">
+  <mat-form-field class="search-field">
+    <mat-label>Busca tu ciudad</mat-label>
+    <input
+      matInput
+      type="text"
+      [(ngModel)]="query"
+      class="search-input"
+      placeholder="Madrid"
+      name="search"
+    />
+  </mat-form-field>
+</form>

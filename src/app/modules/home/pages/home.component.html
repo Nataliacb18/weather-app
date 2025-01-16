@@ -1,0 +1,5 @@
+<div class="home-container">
+  <!-- Buscador -->
+  <app-search class="search" (searchQuery)="onSearch($event)"></app-search>
+  <app-weather [city]="searchQuery"></app-weather>
+</div>

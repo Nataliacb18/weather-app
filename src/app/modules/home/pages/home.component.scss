@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  height: 100vh;
+  background-image: url('../../../../assets/icons/bg-home.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+
+  .search {
+    width: 30%;
+    height: 10%;
+  }
+}
